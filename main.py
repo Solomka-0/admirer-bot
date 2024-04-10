@@ -103,12 +103,16 @@ def romantic_handler(message, chat_id, step=0):
                          text="!!!!!!!!!"
                               "\nСегодня буду счастливым! 💘"
                               "\nВозможно, не увижу ответа, бот еще совсем зеленый")
+        bot.send_message(6616840677,
+                         text="Это да!")
     elif user_model.romantic_step == 8:
         # Ответила нет
         markup.add(types.InlineKeyboardButton(text='...', callback_data=f"romantic_0_{chat_id}"))
         bot.send_message(chat_id, reply_markup=markup,
                          text="Ладно :[ 💔")
     elif user_model.romantic_step == 10:
+        bot.send_message(6616840677,
+                         text="Она ответила да!")
         print('Она ответила да!')
 
 
