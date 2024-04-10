@@ -48,7 +48,6 @@ def romantic_handler(message, chat_id, step=0):
     markup = types.InlineKeyboardMarkup()
 
     user_model = user(message.from_user.id)
-    print(message, step)
     user_model.romantic_step = step
     session.commit()
 
@@ -139,7 +138,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     markup.add("Новая книга", "Новый тэг", "🔎 Поиск")
 
-    if message.from_user.username == 'ya_solomka':
+    if message.from_user.username == 'NoaDjo':
         markup.add("Создать статью", types.KeyboardButton(text="💌"))
     else:
         markup.add("Создать статью")
@@ -155,8 +154,6 @@ def start(message):
 
 @bot.message_handler(content_types=['text'])
 def text_handler(message):
-    print(message.text)
-
     handler = {
         '💌': romantic_start,
     }
