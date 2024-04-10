@@ -139,7 +139,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     markup.add("Новая книга", "Новый тэг", "🔎 Поиск")
 
-    if message.from_user.username == 'NoaDjo':
+    if message.from_user.username == 'ya_solomka':
         markup.add("Создать статью", types.KeyboardButton(text="💌"))
     else:
         markup.add("Создать статью")
