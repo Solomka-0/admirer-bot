@@ -136,11 +136,10 @@ def callback(call):
 @bot.message_handler(commands=['start'])
 def start(message):
     # Главное меню
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3, one_time_keyboard=True)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     markup.add("Новая книга", "Новый тэг", "🔎 Поиск")
 
-    # if message.from_user.username != 'NoaDjo':
-    if message.from_user.username != 'ya_solomka':
+    if message.from_user.username == 'NoaDjo':
         markup.add("Создать статью", types.KeyboardButton(text="💌"))
     else:
         markup.add("Создать статью")
